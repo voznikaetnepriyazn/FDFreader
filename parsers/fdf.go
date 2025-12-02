@@ -15,6 +15,6 @@ func MustLoad(nameOfFile string) ([][]float64, error) {
 	}
 	defer file.Close()
 
-}
+	var matrix [][]float64
 
-//defer file.Close()
+}
