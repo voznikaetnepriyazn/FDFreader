@@ -6,7 +6,7 @@ type Map struct {
 	Data   [][]float64
 }
 
-func InitMap(width, height int, data [][]float64) *Map {
+func InitMap(data [][]float64) *Map {
 	return &Map{
 		Width:  len(data[0]),
 		Height: len(data),

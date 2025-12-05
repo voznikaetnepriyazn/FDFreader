@@ -19,9 +19,9 @@ type Input struct {
 func InitInput(Mmap *mmap.Map, anglex, angleY, zoom float64) *Input {
 	return &Input{
 		Mmap:   Mmap,
-		angleX: 0.7,
-		angleY: 0.7,
-		zoom:   20.0,
+		angleX: anglex,
+		angleY: angleY,
+		zoom:   zoom,
 	}
 }
 
@@ -37,7 +37,7 @@ func ScaleZoom(current, factor float64) float64 {
 	return current * factor
 }
 
-func (i *Input) Update() {
+func (i *Input) Update() error {
 	const delta = 0.05
 	const zoomFactor = 1.05
 
@@ -64,6 +64,8 @@ func (i *Input) Update() {
 	if ebiten.IsKeyPressed(ebiten.KeyMinus) || ebiten.IsKeyPressed(ebiten.KeyNumpadSubtract) {
 		i.zoom = ScaleZoom(i.zoom, 1/zoomFactor)
 	}
+
+	return nil
 }
 
 func (i *Input) Draw(screen *ebiten.Image) {
