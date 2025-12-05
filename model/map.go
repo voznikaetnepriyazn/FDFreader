@@ -1,15 +1,15 @@
 package mmap
 
 type Map struct {
-	width  int
-	height int
-	data   [][]float64
+	Width  int
+	Height int
+	Data   [][]float64
 }
 
 func InitMap(width, height int, data [][]float64) *Map {
 	return &Map{
-		width:  len(data[0]),
-		height: len(data),
-		data:   data,
+		Width:  len(data[0]),
+		Height: len(data),
+		Data:   data,
 	}
 }

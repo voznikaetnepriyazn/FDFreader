@@ -1,5 +1,5 @@
 package mmap
 
 type Vertex struct {
-	x, y, z float64
+	X, Y, Z float64
 }
