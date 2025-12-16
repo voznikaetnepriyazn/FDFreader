@@ -22,6 +22,7 @@ func main() {
 	}
 
 	var angleX, angleY, zoom float64
+	fmt.Print("pls enter values of angles in radians")
 	fmt.Scan(&angleX, &angleY, &zoom)
 	mapp := mmap.InitMap(data)
 	app := input.InitInput(mapp, angleX, angleY, zoom)
